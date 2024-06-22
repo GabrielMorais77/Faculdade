@@ -4,27 +4,31 @@ import org.springframework.web.bind.annotation.*;
 
 import com.poo.sistematizacao.model.Employee;
 
-import java.util.HashMap;
-import java.util.Map;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.GetMapping;
-
-
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping(value ="/employees")
+@RequestMapping(value = "/employees")
 public class EmployeeController {
-    private Map<String, Employee> employeeRepository = new HashMap<>();
+    private List<Employee> employeeRepository = new ArrayList<>();
 
     @PostMapping
-    public Employee addEmployee(@RequestBody Employee employee) {
-        employeeRepository.put(employee.getId(), employee);
-        return employee;
+    public List<Employee> addEmployees(@RequestBody List<Employee> employees) {
+        employeeRepository.addAll(employees);
+        return employees;
     }
+
     @GetMapping("/{id}")
     public Employee getEmployee(@PathVariable String id) {
-        return employeeRepository.get(id);
+        Optional<Employee> employee = employeeRepository.stream()
+                .filter(e -> e.getId().equals(id))
+                .findFirst();
+        return employee.orElse(null);  // Return null if not found, handle this better in real applications
     }
-    
+
+    @GetMapping
+    public List<Employee> getAllEmployees() {
+        return employeeRepository;
+    }
 }
