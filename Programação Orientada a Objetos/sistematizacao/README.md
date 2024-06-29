@@ -1,6 +1,6 @@
 # Projeto B Sistematização - Programação Orientada a Objetos
 
-Projeto implementando uma API REST com o gerencimaento das informaçoes dos empregados por meio de requisiçoes HTTP (POST / GET)
+Projeto implementando uma API REST com o gerenciamento das informações dos empregados por meio de requisições HTTP (POST / GET).
 
 ## 🚀 Começando
 
