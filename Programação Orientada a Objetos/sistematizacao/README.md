@@ -19,12 +19,13 @@ Postman para testes de API (opcional)
 1 - Clone o repositório
 
 ```
-git clone https://github.com/seu-usuario/projeto-api-rest.git
+git clone https://github.com/GabrielMorais77/Faculdade.git
 
 ```
 2 - Navegue até o diretório do projeto
 ```
-cd projeto-api-rest
+cd Faculdade/Programaçao\ Orientada\ a\ Objetos/sistematizacao
+
 ```
 3- mvn clean install
 ```
