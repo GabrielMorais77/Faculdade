@@ -43,7 +43,7 @@ mvn clean package
 
 2 - Executar o arquivo JAR gerado
 ```
-java -jar target/projeto-api-rest-0.0.1-SNAPSHOT.jar
+java -jar sistematizacao-0.0.1-SNAPSHOT.jar
 ```
 3 -  Acesso a API do projeto
 ```
